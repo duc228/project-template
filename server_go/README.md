@@ -7,7 +7,8 @@
 myapp
 ├── cmd
 │    ├── server
-│    └── main.go
+│    └──── main.go
+│    
 │  
 ├── internal
 │   ├── common
@@ -18,7 +19,6 @@ myapp
 │   │   └── utils
 │   │
 │   ├── config
-│   ├── common
 │   ├── db
 │   │   ├── models
 │   │   ├── repository
