@@ -27,19 +27,19 @@ services:
     volumes:
       - ./server_go:/opt
 
-  pt_mongo:
-    image: mongo
-    container_name: pt_mongo
-    networks:
-      - pt
-    ports:
-      - "27018:27017"
-    volumes:
-      - ./mongo/data:/data/db
-    environment:
-      MONGO_INITDB_ROOT_USERNAME: root
-      MONGO_INITDB_ROOT_PASSWORD: abc123
-      MONGO_INITDB_DATABASE: pt_mongo
+  # pt_mongo:
+  #   image: mongo
+  #   container_name: pt_mongo
+  #   networks:
+  #     - pt
+  #   ports:
+  #     - "27018:27017"
+  #   volumes:
+  #     - ./mongo/data:/data/db
+  #   environment:
+  #     MONGO_INITDB_ROOT_USERNAME: root
+  #     MONGO_INITDB_ROOT_PASSWORD: abc123
+  #     MONGO_INITDB_DATABASE: pt_mongo
 
 networks:
   pt:
