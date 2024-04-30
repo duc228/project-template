@@ -24,8 +24,25 @@ services:
       - pt
     ports:
       - "5000:5000"
+    expose:
+      - 5000
     volumes:
       - ./server_go:/opt
+  
+  pt_py:
+    platform: linux/x86_64
+    build:
+      context: ./server_py
+      dockerfile: Dockerfile
+    container_name: pt_py
+    networks:
+      - pt
+    ports:
+      - "5001:5001"
+    expose:
+      - 5001
+    volumes:
+      - ./server_py:/opt
 
   # pt_mongo:
   #   image: mongo
