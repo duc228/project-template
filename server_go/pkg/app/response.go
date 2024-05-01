@@ -20,4 +20,5 @@ func NewResponse(c *gin.Context, errCode int, data interface{}) {
 		Code: errCode,
 		Data: data,
 	})
+	return
 }

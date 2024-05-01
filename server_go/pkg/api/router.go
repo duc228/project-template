@@ -2,6 +2,7 @@ package router
 
 import (
 	c "server/pkg/api/controllers"
+	"server/pkg/api/middlewares"
 
 	"github.com/gin-gonic/gin"
 )
@@ -24,7 +25,7 @@ func InitRouter() *gin.Engine {
 		}
 
 		// Todos endpoints
-		todos := api.Group("/todos")
+		todos := api.Group("/todos", middlewares.Logger())
 		{
 			todos.GET("", c.GetTodos)
 		}

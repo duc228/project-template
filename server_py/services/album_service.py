@@ -1,18 +1,13 @@
 import requests
 
-API_ENDPOINT = 'https://jsonplaceholder.typicode.com'
+API_ENDPOINT = 'http://pt_go:5000'
 
-class TodoService:
+class AlbumService:
 
 	@classmethod
 	def get_all(cls):
-		todo_data = cls.__get_req(cls, '/todos')
-		return todo_data
-	
-	@classmethod
-	def get_by_id(cls, todo_id):
-		todo_data = cls.__get_req(cls, f'/tod1os/{todo_id}')
-		return todo_data
+		data = cls.__get_req(cls, '/api/albums')
+		return data
 	
 	def __get_req(self, path):
 		resp = requests.get(f'{API_ENDPOINT}{path}')
