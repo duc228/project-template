@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  # pt_client:
-  #   platform: linux/x86_64
-  #   build:
-  #     context: ./client
-  #     dockerfile: Dockerfile
-  #   container_name: pt_client
-  #   networks:
-  #     - pt
-  #   ports:
-  #     - "3001:3000"
-  #   volumes:
-  #     - ./client:/opt
+  pt_client:
+    # platform: linux/x86_64
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: pt_client
+    networks:
+      - pt
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./client:/opt
 
   pt_go:
     platform: linux/x86_64
@@ -24,8 +24,25 @@ services:
       - pt
     ports:
       - "5000:5000"
+    expose:
+      - 5000
     volumes:
       - ./server_go:/opt
+  
+  pt_py:
+    platform: linux/x86_64
+    build:
+      context: ./server_py
+      dockerfile: Dockerfile
+    container_name: pt_py
+    networks:
+      - pt
+    ports:
+      - "5001:5001"
+    expose:
+      - 5001
+    volumes:
+      - ./server_py:/opt
 
   # pt_mongo:
   #   image: mongo
@@ -38,7 +55,7 @@ services:
   #     - ./mongo/data:/data/db
   #   environment:
   #     MONGO_INITDB_ROOT_USERNAME: root
-  #     MONGO_INITDB_ROOT_PASSWORD: abc123
+  #     MONGO_INITDB_ROOT_PASSWORD: caadvance
   #     MONGO_INITDB_DATABASE: pt_mongo
 
 networks:
