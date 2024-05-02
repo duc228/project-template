@@ -55,7 +55,7 @@ services:
   #     - ./mongo/data:/data/db
   #   environment:
   #     MONGO_INITDB_ROOT_USERNAME: root
-  #     MONGO_INITDB_ROOT_PASSWORD: abc123
+  #     MONGO_INITDB_ROOT_PASSWORD: caadvance
   #     MONGO_INITDB_DATABASE: pt_mongo
 
 networks:
