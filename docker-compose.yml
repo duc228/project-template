@@ -1,18 +1,18 @@
 version: '3.8'
 
 services:
-  # pt_client:
-  #   platform: linux/x86_64
-  #   build:
-  #     context: ./client
-  #     dockerfile: Dockerfile
-  #   container_name: pt_client
-  #   networks:
-  #     - pt
-  #   ports:
-  #     - "3001:3000"
-  #   volumes:
-  #     - ./client:/opt
+  pt_client:
+    platform: linux/x86_64
+    build:
+      context: ./client
+      dockerfile: Dockerfile
+    container_name: pt_client
+    networks:
+      - pt
+    ports:
+      - "3001:3000"
+    volumes:
+      - ./client:/opt
 
   pt_go:
     platform: linux/x86_64

@@ -6,6 +6,7 @@ from api.middlewares.log_middleware import Middleware
 
 app = Flask(__name__)
 
+# Middlware
 app.wsgi_app = Middleware(app.wsgi_app)
 
 app.register_blueprint(todo_route, url_prefix='/api/todo')
